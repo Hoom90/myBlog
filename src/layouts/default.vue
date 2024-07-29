@@ -4,7 +4,7 @@ import footerComp from './footerComp.vue';
 </script>
 <template>
   <!-- <headerComp /> -->
-  <div class="container h-100 min-h-[calc(100vh-56px)]">
+  <div class="h-100 w-100 mx-auto min-h-[calc(100vh-56px)] bg-slate-900 text-white">
     <router-view />
   </div>
   <footerComp />
