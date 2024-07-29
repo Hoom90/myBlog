@@ -1,5 +1,11 @@
+<script setup>
+import headerComp from './headerComp.vue';
+import footerComp from './footerComp.vue';
+</script>
 <template>
-  <div class="mx-auto w-[400px] md:w-[800px] lg:w-[1200px] bg-red-500">
+  <!-- <headerComp /> -->
+  <div class="container h-100 min-h-[calc(100vh-56px)]">
     <router-view />
   </div>
+  <footerComp />
 </template>
