@@ -1,6 +1,12 @@
 <script setup>
 import noImage from "@/assets/photo-1588440691140-09155c1be58a.avif"
-import homeSVG from "@/assets/home.svg"
+import emailIcon from "@/assets/email.svg"
+import githubIcon from "@/assets/github.svg"
+import linkedinIcon from "@/assets/linkedin.svg"
+const burgerIcon = ref()
+const state = reactive({
+    sidebar: false,
+})
 </script>
 <template>
     <section class=" p-3">
@@ -8,75 +14,13 @@ import homeSVG from "@/assets/home.svg"
             <div class="p-10 grid gap-3">
                 <div class="grid grid-cols-2 grid-flow-col gap-3">
                     <div class="col-span-1">
-
-                        <div class="grid gap-3 h-full">
-                            <div class="rounded-xl overflow-hidden flex justify-between items-center p-1 px-5 bg-[#1e1b1e]">
-                                <svg width="40" height="40" viewBox="0 0 48 48" id="Layer_2" data-name="Layer 2">
-                                    <path class="cls-1" stroke="#fff" fill="#fff"
-                                        d="M42.63,21.85,25.94,7.64a3,3,0,0,0-3.88,0L5.37,21.85A2.45,2.45,0,0,0,7,26.17H9.09V39.45a1.63,1.63,0,0,0,1.63,1.63h7.35a1.63,1.63,0,0,0,1.63-1.63V34.59a4.3,4.3,0,1,1,8.6,0v4.86a1.63,1.63,0,0,0,1.63,1.63h7.35a1.63,1.63,0,0,0,1.63-1.63V26.17H41A2.45,2.45,0,0,0,42.63,21.85ZM24,28.3A4.3,4.3,0,1,1,28.3,24,4.31,4.31,0,0,1,24,28.3Z" />
-                                </svg>
-                                <!-- <p>Lorem ipsum dolor</p> -->
-                            </div>
-                            <div class="grid grid-cols-2 grid-flow-col gap-3">
-                                <div class="grid gap-3">
-                                    <div
-                                        class="rounded-xl overflow-hidden flex justify-between items-center p-2 px-5 bg-[#1e1b1e]">
-                                        <p>نام :</p>
-                                        <p>محمد مهدوی</p>
-                                    </div>
-                                    <div class="rounded-xl overflow-hidden">
-                                        <div
-                                            class="overflow-hidden flex justify-between items-center p-2 px-5 bg-[#1e1b1e]">
-                                            <p>Lorem ipsum dolor</p>
-                                            <p>Lorem</p>
-                                        </div>
-                                        <img :src="noImage" alt="noImage" class="aspect-square object-cover">
-                                    </div>
-                                    <div
-                                        class="rounded-xl overflow-hidden flex justify-between items-center p-2 px-5 bg-[#1e1b1e]">
-                                        <div class="bg-[#272427] p-1 rounded-full">
-                                            <svg width="40" height="40" viewBox="0 0 48 48" id="Layer_2"
-                                                data-name="Layer 2">
-                                                <path class="cls-1" stroke="#fff" fill="#fff"
-                                                    d="M42.63,21.85,25.94,7.64a3,3,0,0,0-3.88,0L5.37,21.85A2.45,2.45,0,0,0,7,26.17H9.09V39.45a1.63,1.63,0,0,0,1.63,1.63h7.35a1.63,1.63,0,0,0,1.63-1.63V34.59a4.3,4.3,0,1,1,8.6,0v4.86a1.63,1.63,0,0,0,1.63,1.63h7.35a1.63,1.63,0,0,0,1.63-1.63V26.17H41A2.45,2.45,0,0,0,42.63,21.85ZM24,28.3A4.3,4.3,0,1,1,28.3,24,4.31,4.31,0,0,1,24,28.3Z" />
-                                            </svg>
-                                        </div>
-                                        <div class="bg-[#272427] p-1 rounded-full">
-                                            <svg width="40" height="40" viewBox="0 0 48 48" id="Layer_2"
-                                                data-name="Layer 2">
-                                                <path class="cls-1" stroke="#fff" fill="#fff"
-                                                    d="M42.63,21.85,25.94,7.64a3,3,0,0,0-3.88,0L5.37,21.85A2.45,2.45,0,0,0,7,26.17H9.09V39.45a1.63,1.63,0,0,0,1.63,1.63h7.35a1.63,1.63,0,0,0,1.63-1.63V34.59a4.3,4.3,0,1,1,8.6,0v4.86a1.63,1.63,0,0,0,1.63,1.63h7.35a1.63,1.63,0,0,0,1.63-1.63V26.17H41A2.45,2.45,0,0,0,42.63,21.85ZM24,28.3A4.3,4.3,0,1,1,28.3,24,4.31,4.31,0,0,1,24,28.3Z" />
-                                            </svg>
-                                        </div>
-                                        <div class="bg-[#272427] p-1 rounded-full">
-                                            <svg width="40" height="40" viewBox="0 0 48 48" id="Layer_2"
-                                                data-name="Layer 2">
-                                                <path class="cls-1" stroke="#fff" fill="#fff"
-                                                    d="M42.63,21.85,25.94,7.64a3,3,0,0,0-3.88,0L5.37,21.85A2.45,2.45,0,0,0,7,26.17H9.09V39.45a1.63,1.63,0,0,0,1.63,1.63h7.35a1.63,1.63,0,0,0,1.63-1.63V34.59a4.3,4.3,0,1,1,8.6,0v4.86a1.63,1.63,0,0,0,1.63,1.63h7.35a1.63,1.63,0,0,0,1.63-1.63V26.17H41A2.45,2.45,0,0,0,42.63,21.85ZM24,28.3A4.3,4.3,0,1,1,28.3,24,4.31,4.31,0,0,1,24,28.3Z" />
-                                            </svg>
-                                        </div>
-                                        <div class="bg-[#272427] p-1 rounded-full">
-                                            <svg width="40" height="40" viewBox="0 0 48 48" id="Layer_2"
-                                                data-name="Layer 2">
-                                                <path class="cls-1" stroke="#fff" fill="#fff"
-                                                    d="M42.63,21.85,25.94,7.64a3,3,0,0,0-3.88,0L5.37,21.85A2.45,2.45,0,0,0,7,26.17H9.09V39.45a1.63,1.63,0,0,0,1.63,1.63h7.35a1.63,1.63,0,0,0,1.63-1.63V34.59a4.3,4.3,0,1,1,8.6,0v4.86a1.63,1.63,0,0,0,1.63,1.63h7.35a1.63,1.63,0,0,0,1.63-1.63V26.17H41A2.45,2.45,0,0,0,42.63,21.85ZM24,28.3A4.3,4.3,0,1,1,28.3,24,4.31,4.31,0,0,1,24,28.3Z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="rounded-xl overflow-hidden">
-                                    <img :src="noImage" alt="noImage" class="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-span-1">
                         <div class="grid justify-between gap-3 h-full">
                             <div class="p-5 rounded-xl bg-[#1e1b1e]">
-                                <p class="text-[48px]" dir="ltr">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                </p>
-                                <button class="bg-purple-500 px-5 p-2 rounded-full">استخدام کنید</button>
+                                <p class="text-[48px]">کسب و کار خودت رو وسعت بده!</p>
+                                <p class="p-3">پشت یه کسب و کار خوب یه تیم خوبه!</p>
+                                <div class="flex justify-end">
+                                    <button class="bg-purple-500 px-5 p-2 rounded-full">شروع همکاری جدید</button>
+                                </div>
                             </div>
                             <div class="grid grid-flow-col grid-cols-3 gap-3">
                                 <div
@@ -97,7 +41,58 @@ import homeSVG from "@/assets/home.svg"
                                     class="col-span-1 rounded-xl overflow-hidden p-3 aspect-square flex justify-center items-center text-center bg-green-500">
                                     <div class="font-bold">
                                         <p class="text-[30px]">+1</p>
-                                        <p>سابقه فعالیت</p>
+                                        <p>سال سابقه فعالیت</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-span-1">
+
+                        <div class="grid gap-3 h-full">
+
+                            <div ref="burgerIcon"
+                                class="rounded-xl overflow-hidden p-2 px-5 bg-[#1e1b1e] flex items-center justify-end gap-1"
+                                @click="state.sidebar = !state.sidebar">
+                                <div class="bg-[#272427] p-1 rounded-full w-10 h-10"></div>
+                            </div>
+
+                            <div class="grid grid-cols-2 grid-flow-col gap-3">
+                                <div class="rounded-xl overflow-hidden col-span-1">
+                                    <img :src="noImage" alt="noImage" class="">
+                                </div>
+                                <div class="grid gap-3 col-span-1">
+                                    <div
+                                        class="rounded-xl overflow-hidden flex justify-between items-center p-2 px-5 bg-[#1e1b1e]">
+                                        <p>نام :</p>
+                                        <p>محمد مهدوی</p>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden">
+                                        <div
+                                            class="overflow-hidden flex justify-between items-center p-2 px-5 bg-[#1e1b1e]">
+                                            <p>محل سکونت:</p>
+                                            <p>قم</p>
+                                        </div>
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209962.38776323502!2d50.68725261905887!3d34.688471373266324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f93bb6eb88ce195%3A0xcc35bec1c2604470!2sQom%2C%20Qom%20Province%2C%20Iran!5e0!3m2!1sen!2s!4v1722888117333!5m2!1sen!2s"
+                                            class="aspect-square w-full h-full" allowfullscreen="" loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    </div>
+                                    <div
+                                        class="rounded-xl overflow-hidden flex justify-between items-center p-2 px-5 bg-[#1e1b1e]">
+                                        <div class="bg-[#272427] p-1 rounded-full">
+                                            <img :src="github">
+                                        </div>
+                                        <div class="bg-[#272427] p-1 rounded-full">
+                                            linkedin
+                                        </div>
+                                        <!-- <div class="bg-[#272427] p-1 rounded-full">
+                                            telegram
+                                        </div> -->
+                                        <div class="bg-[#272427] p-1 rounded-full">
+                                            email
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +119,7 @@ import homeSVG from "@/assets/home.svg"
                     <div class="col-span-8">
                         <div class="rounded-xl overflow-hidden p-5 bg-[#1e1b1e] h-full">
                             <div class="grid grid-cols-2 items-center pb-3">
-                                <p class="text-[24px]"><strong>پورتفولیو</strong></p>
+                                <p class="text-[24px]"><strong>نمونه کار ها</strong></p>
                                 <p class="text-end text-[18px] font-thin">مشاهده همه</p>
                             </div>
                             <div class="grid grid-cols-3 grid-flow-col gap-3">
@@ -149,3 +144,4 @@ import homeSVG from "@/assets/home.svg"
         </div>
     </section>
 </template>
+<style scoped></style>
